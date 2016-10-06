@@ -1,0 +1,27 @@
+{
+  "name": "rn-header",
+  "version": "1.0.0",
+  "description": "A header to use in apps",
+  "main": "Header.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parkerdan/rn-header.git"
+  },
+  "keywords": [
+    "react-native",
+    "header",
+    "component"
+  ],
+  "author": "Dan Parker",
+  "license": "MIT",
+  "dependencies": {
+    "react-native-vector-icons": "^2.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/parkerdan/rn-header/issues"
+  },
+  "homepage": "https://github.com/parkerdan/rn-header#readme"
+}
