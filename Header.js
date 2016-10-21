@@ -154,7 +154,7 @@ renderHeight(){
 };
 
 renderHeader(){
-  if (this.props.scrollVal < 200) {
+  if (this.props.scrollVal < 200 || this.props.scrollVal === undefined) {
     return(
       <Animated.View style={{
         backgroundColor: this.props.backgroundColor,
