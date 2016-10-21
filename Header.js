@@ -185,7 +185,7 @@ renderHeader(){
 render(){
 
   return(
-    <View>
+    <View style={{zIndex:99}}>
       {this.renderHeader()}
       {this.props.children}
     </View>
