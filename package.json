@@ -1,6 +1,6 @@
 {
   "name": "rn-header",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A header to use in apps",
   "main": "Header.js",
   "scripts": {
@@ -13,7 +13,8 @@
   "keywords": [
     "react-native",
     "header",
-    "component"
+    "component",
+    "scroll-away-header"
   ],
   "author": "Dan Parker",
   "license": "MIT",
