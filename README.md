@@ -131,5 +131,30 @@ export default class Example extends Component {
 
 };
 ```
+
+### All props
+```js
+backgroundColor: React.PropTypes.string.isRequired,
+height: React.PropTypes.number.isRequired,
+text: React.PropTypes.string,
+
+iconLeftName: React.PropTypes.oneOfType([React.PropTypes.bool,React.PropTypes.string]),
+onLeftIconPress: React.PropTypes.func,
+
+iconRightName: React.PropTypes.oneOfType([React.PropTypes.bool,React.PropTypes.string]),
+onRightIconPress: React.PropTypes.func,
+
+thirdIconName: React.PropTypes.oneOfType([React.PropTypes.bool,React.PropTypes.string]),
+onThirdIconPress: React.PropTypes.func,
+
+textStyle: React.PropTypes.object,
+
+iconSize: React.PropTypes.number,
+iconColor: React.PropTypes.string,
+
+scrollY: React.PropTypes.object,
+scrollVal: React.PropTypes.number
+
+```
 ![Two Icons](./TwoIcons.png "Two Icons")
 ![Three Icons](./ThreeIcons.png "Three Icons")
