@@ -29,7 +29,8 @@ iconSize: React.PropTypes.number,
 iconColor: React.PropTypes.string,
 
 scrollY: React.PropTypes.object,
-scrollVal: React.PropTypes.number
+scrollVal: React.PropTypes.number,
+zIndex: React.PropTypes.number
 };
 
 export default class Header extends Component {
@@ -185,7 +186,7 @@ renderHeader(){
 render(){
 
   return(
-    <View style={{zIndex:99}}>
+    <View style={{zIndex:this.props.zIndex || 0}}>
       {this.renderHeader()}
       {this.props.children}
     </View>
