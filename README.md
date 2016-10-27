@@ -94,7 +94,9 @@ export default class Example extends Component {
          iconRightName={'cogs'}
          iconSize={25}
          iconColor={'white'}
-         onRightIconPress={ this.addItem }
+         onRightIconPress={
+           () => console.log('Stuff')
+          }
          textStyle={{
            fontSize:20,
            color:'white',
@@ -153,7 +155,9 @@ iconSize: React.PropTypes.number,
 iconColor: React.PropTypes.string,
 
 scrollY: React.PropTypes.object,
-scrollVal: React.PropTypes.number
+scrollVal: React.PropTypes.number,
+
+zIndex: React.PropTypes.number  // Useful for popups within Header to overlay ListView
 
 ```
 ![Two Icons](./TwoIcons.png "Two Icons")
