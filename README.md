@@ -118,7 +118,7 @@ export default class Example extends Component {
        </Header>
 
        <ScrollView
-         scrollEventThrottle={16}
+         scrollEventThrottle={16}//without this it will be choppy as fuck
          onScroll={
            Animated.event(
            [{nativeEvent: {contentOffset: {y:  this.state.scrollY }}}]
