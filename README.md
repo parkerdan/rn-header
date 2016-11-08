@@ -12,19 +12,17 @@ react-native link react-native-vector-icons
 npm install rn-header --save
 
 ```
-
-
 - To use as a scroll away header takes a little work to set up.
--  Import `Animated` from react-native
-- Add two values to the component state.  Need a `scrollY` and the `scrollVal` so the Header can respond properly
-
-- Also need a listener on the animated value
-
-- Can use with Listview as well, the set up is Identical.
-
+- import `Animated` from react-native
+- Add an Animated.Value to the component state.  Need a `scrollY` so the Header can respond properly
+- Can use with Listview or ScrollView.
+- SET UP THE ONSCROLL PROP TO MATCH THIS EXAMPLE
+- If you don't `use scrollEventThrottle` you're gonna have a bad time...mmmm-kay??
 - just copy/paste this example and you'll get the hang of it 🤓
+- Wrap whatever content you want within the `<Header>  </Header>` tags
 
-####  If you do not want the header to scroll away,  do not supply the header with the `scrollY` and `scrollVal`
+
+####  If you do not want the header to scroll away,  do not supply the header with the `scrollY`
 
 
 
@@ -50,21 +48,9 @@ export default class Example extends Component {
    this.scrollListener = this.scrollListener.bind(this);
    this.state = {
      scrollY: new Animated.Value(0),
-     scrollVal: 0,
    };
  };
 
- componentWillMount(){
-   this.state.scrollY.addListener(this.scrollListener);
- };
-
- componentWillUnmount(){
-   this.state.scrollY.removeAllListeners();
- };
-
- scrollListener(e){
-   this.setState({scrollVal:e.value})
- };
 
  render(){
    let things = ['Watch','The','Header','Scroll','Away','As','I','Move'].map((opt,i) => {
@@ -86,7 +72,6 @@ export default class Example extends Component {
        backgroundColor:'yellow'
      }}>
        <Header
-         scrollVal={this.state.scrollVal}
          scrollY={this.state.scrollY}
          backgroundColor={'blue'}
          height={60}
@@ -135,30 +120,22 @@ export default class Example extends Component {
 ```
 
 ### All props
-```js
-backgroundColor: React.PropTypes.string.isRequired,
-height: React.PropTypes.number.isRequired,
-text: React.PropTypes.string,
+| Prop  |  Type  | Description |
+| ---   | ---    | ---         |
+| backgroundColor | string (Required) | backgroundColor of the Header                     |
+| height          | number (Required) | height of the Header                              |
+| text            | string            | centered text of Header                           |  
+| iconLeftName    | string or bool    | name of Font Awesome Icon for left side of Header |
+| onLeftIconPress | function          | function called on press of left icon             |
+| iconRightName   | string or bool    | name of Font Awesome Icon for right side of Header|  
+| onRightIconPress| function          | function called on press of right icon            |
+| thirdIconName   | string or bool    | name of Font Awesome Icon for third icon of Header|
+| onThirdIconPress| function          | function called on press of third icon            |
+| textStyle       | object            | styles applied to the Header's text               |  
+| iconSize        | number            | size of the icon(s) on the Header                 |
+| iconColor       | string            | color of the Header's icon(s)                     |
+| scrollY         | Animated Value    | for the Header to scroll away, it needs a reference to the scrollY position of the scrollable content|  
 
-iconLeftName: React.PropTypes.oneOfType([React.PropTypes.bool,React.PropTypes.string]),
-onLeftIconPress: React.PropTypes.func,
 
-iconRightName: React.PropTypes.oneOfType([React.PropTypes.bool,React.PropTypes.string]),
-onRightIconPress: React.PropTypes.func,
-
-thirdIconName: React.PropTypes.oneOfType([React.PropTypes.bool,React.PropTypes.string]),
-onThirdIconPress: React.PropTypes.func,
-
-textStyle: React.PropTypes.object,
-
-iconSize: React.PropTypes.number,
-iconColor: React.PropTypes.string,
-
-scrollY: React.PropTypes.object,
-scrollVal: React.PropTypes.number,
-
-zIndex: React.PropTypes.number  // Useful for popups within Header to overlay ListView
-
-```
 ![Two Icons](./TwoIcons.png "Two Icons")
 ![Three Icons](./ThreeIcons.png "Three Icons")
