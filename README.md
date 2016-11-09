@@ -19,7 +19,7 @@ npm install rn-header --save
 - SET UP THE ONSCROLL PROP TO MATCH THIS EXAMPLE
 - If you don't `use scrollEventThrottle` you're gonna have a bad time...mmmm-kay??
 - just copy/paste this example and you'll get the hang of it 🤓
-- Wrap whatever content you want within the `<Header>  </Header>` tags
+- When using as a scroll away header, wrap whatever content you want to stay within the `<Header>  </Header>` tags.  When using as a stand alone Header, just use as `<Header/>`
 
 
 ####  If you do not want the header to scroll away,  do not supply the header with the `scrollY`
