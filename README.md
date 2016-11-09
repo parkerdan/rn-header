@@ -120,21 +120,21 @@ export default class Example extends Component {
 ```
 
 ### All props
-| Prop  |  Type  | Description |
-| ---   | ---    | ---         |
-| backgroundColor | string (Required) | backgroundColor of the Header                     |
-| height          | number (Required) | height of the Header                              |
-| text            | string            | centered text of Header                           |  
-| iconLeftName    | string or bool    | name of Font Awesome Icon for left side of Header |
-| onLeftIconPress | function          | function called on press of left icon             |
-| iconRightName   | string or bool    | name of Font Awesome Icon for right side of Header|  
-| onRightIconPress| function          | function called on press of right icon            |
-| thirdIconName   | string or bool    | name of Font Awesome Icon for third icon of Header|
-| onThirdIconPress| function          | function called on press of third icon            |
-| textStyle       | object            | styles applied to the Header's text               |  
-| iconSize        | number            | size of the icon(s) on the Header                 |
-| iconColor       | string            | color of the Header's icon(s)                     |
-| scrollY         | Animated Value    | for the Header to scroll away, it needs a reference to the scrollY position of the scrollable content|  
+| Prop  |  Type  | Description       | Required |
+| ---   | ---    | ---               | --- |
+| backgroundColor | string           | backgroundColor of the Header                     | **YES** |
+| height          | number           | height of the Header                              | **YES** |
+| text            | string           | centered text of Header                           |  no |
+| iconLeftName    | string or bool   | name of Font Awesome Icon for left side of Header |no |
+| onLeftIconPress | function         | function called on press of left icon             |no |
+| iconRightName   | string or bool   | name of Font Awesome Icon for right side of Header|  no |
+| onRightIconPress| function         | function called on press of right icon            |no |
+| thirdIconName   | string or bool   | name of Font Awesome Icon for third icon of Header|no |
+| onThirdIconPress| function         | function called on press of third icon            |no |
+| textStyle       | object           | styles applied to the Header's text               |  no |
+| iconSize        | number           | size of the icon(s) on the Header                 |no |
+| iconColor       | string           | color of the Header's icon(s)                     |no |
+| scrollY         | Animated Value   | for the Header to scroll away, it needs a reference to the scrollY position of the scrollable content|  no |
 
 
 ![Two Icons](./TwoIcons.png "Two Icons")
