@@ -173,7 +173,8 @@ if (this.props.scrollY) {
   return(
     this.props.scrollY.interpolate({
       inputRange: [-100,0,200,200],
-      outputRange: [this.props.height,this.props.height, 0, 0]
+      outputRange: [this.props.height,this.props.height, 0, 0],
+      extrapolate:'clamp'
     })
   )
 } else return this.props.height
@@ -214,7 +215,8 @@ if (this.props.scrollY) {
   return(
     this.props.scrollY.interpolate({
       inputRange: [-100,0,200,200],
-      outputRange: [this.state.initialHeight,this.state.initialHeight, (this.state.initialHeight - this.props.height), (this.state.initialHeight - this.props.height)]
+      outputRange: [this.state.initialHeight,this.state.initialHeight, (this.state.initialHeight - this.props.height), (this.state.initialHeight - this.props.height)],
+      extrapolate:'clamp'
     })
   )
 }

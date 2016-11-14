@@ -1,6 +1,6 @@
 {
   "name": "rn-header",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "A header to use in apps",
   "main": "Header.js",
   "scripts": {
