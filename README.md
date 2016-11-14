@@ -1,5 +1,5 @@
 # RN-Header
-
+<a href="https://npmjs.org/package/rn-header"><img alt="npm version" src="http://img.shields.io/npm/dt/rn-header.svg?style=flat-square"></a>
 ### Can Use the header as a stand alone header, or a scroll away header.
 
 #### You must have `react-native-vector-icons` installed and linked for this to work
