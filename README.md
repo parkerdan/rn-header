@@ -135,6 +135,10 @@ export default class Example extends Component {
 | iconSize        | number           | size of the icon(s) on the Header                 |no |
 | iconColor       | string           | color of the Header's icon(s)                     |no |
 | scrollY         | Animated Value   | for the Header to scroll away, it needs a reference to the scrollY position of the scrollable content|  no |
+| rightText | string | display text instead of icon, must omit iconRightName prop, uses onRightIconPress function | no|
+| rightTextStyle | object | styles to the right text | no|
+| leftText | string | display text instead of icon, must omit iconLeftName prop, uses onLeftIconPress function | no|
+| leftTextStyle | object | styles to the right text | no|
 
 
 ![Two Icons](./TwoIcons.png "Two Icons")
