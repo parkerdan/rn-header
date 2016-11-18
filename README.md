@@ -139,6 +139,7 @@ export default class Example extends Component {
 | rightTextStyle | object | styles to the right text | no|
 | leftText | string | display text instead of icon, must omit iconLeftName prop, uses onLeftIconPress function | no|
 | leftTextStyle | object | styles to the right text | no|
+| shouldComponentUpdate | function | pass in a function that returns true or false, If you are not dynamically changing the Header content, just pass in `() => false` and you will see **Immense** benefits when used with the Scroll Away capability | suggested |
 
 
 ![Two Icons](./TwoIcons.png "Two Icons")

@@ -49,6 +49,14 @@ this.state = {
 };
 };
 
+shouldComponentUpdate(){
+  if (this.props.shouldComponentUpdate) {
+    return this.props.shouldComponentUpdate()
+  } else {
+    return true
+  }
+}
+
 componentWillMount(){
 if (this.props.scrollY) {
   this.props.scrollY.addListener(this.scrollListener)
