@@ -43,12 +43,9 @@ import Header from 'rn-header';
 
 
 export default class Example extends Component {
- constructor(props){
-   super(props);
-   this.scrollListener = this.scrollListener.bind(this);
-   this.state = {
-     scrollY: new Animated.Value(0),
-   };
+ constructor(){
+   super();
+   this.scrollY = new Animated.Value(0)
  };
 
 
@@ -72,7 +69,7 @@ export default class Example extends Component {
        backgroundColor:'yellow'
      }}>
        <Header
-         scrollY={this.state.scrollY}
+         scrollY={this.scrollY}
          backgroundColor={'blue'}
          height={60}
          text={'Scroll Away'}
@@ -106,7 +103,7 @@ export default class Example extends Component {
          scrollEventThrottle={16}//without this it will be choppy as fuck
          onScroll={
            Animated.event(
-           [{nativeEvent: {contentOffset: {y:  this.state.scrollY }}}]
+           [{nativeEvent: {contentOffset: {y:  this.scrollY }}}]
            )
          }
 
@@ -139,7 +136,7 @@ export default class Example extends Component {
 | rightTextStyle | object | styles to the right text | no|
 | leftText | string | display text instead of icon, must omit iconLeftName prop, uses onLeftIconPress function | no|
 | leftTextStyle | object | styles to the right text | no|
-| shouldComponentUpdate | function | pass in a function that returns true or false, If you are not dynamically changing the Header content, just pass in `() => false` and you will see **Immense** benefits when used with the Scroll Away capability | suggested |
+| shouldComponentUpdate | function | pass in a function that returns true or false, If you are not dynamically changing the Header content, just pass in `() => false` | no |
 
 
 ![Two Icons](./TwoIcons.png "Two Icons")
