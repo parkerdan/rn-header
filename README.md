@@ -2,7 +2,7 @@
 <a href="https://npmjs.org/package/rn-header"><img alt="npm version" src="http://img.shields.io/npm/dt/rn-header.svg?style=flat-square"></a>
 ### Can Use the header as a stand alone header, or a scroll away header.
 
-#### You must have `react-native-vector-icons` installed and linked for this to work
+##### You must have `react-native-vector-icons` installed and linked for this to display icons on the header.  Can also display text on the sides of header
 
 
 ### Uses Font Awesome icons as the icon source
@@ -14,7 +14,7 @@ npm install rn-header --save
 ```
 - To use as a scroll away header takes a little work to set up.
 - import `Animated` from react-native
-- Add an Animated.Value to the component state.  Need a `scrollY` so the Header can respond properly
+- Add an Animated.Value to the constructor.  Need a `scrollY` so the Header can respond properly
 - Can use with Listview or ScrollView.
 - SET UP THE ONSCROLL PROP TO MATCH THIS EXAMPLE
 - If you don't `use scrollEventThrottle` you're gonna have a bad time...mmmm-kay??
@@ -72,14 +72,16 @@ export default class Example extends Component {
          scrollY={this.scrollY}
          backgroundColor={'blue'}
          height={60}
-         text={'Scroll Away'}
-         iconRightName={'cogs'}
-         iconSize={25}
-         iconColor={'white'}
-         onRightIconPress={
+         centerText={'Scroll Away'}
+         rightIconProps={{
+           name:'cogs',
+           size:25,
+           color:'white'
+         }}
+         onRightPress={
            () => console.log('Stuff')
           }
-         textStyle={{
+         centerTextProps={{
            fontSize:20,
            color:'white',
            fontWeight:'500'
@@ -100,8 +102,9 @@ export default class Example extends Component {
        </Header>
 
        <ScrollView
-         scrollEventThrottle={16}//without this it will be choppy as fuck
+         scrollEventThrottle={16}
          onScroll={
+           // this maps the onScroll event to the scrollY variable declared in the constructor.  Now the header has a reference to the scrolling and can respond properly
            Animated.event(
            [{nativeEvent: {contentOffset: {y:  this.scrollY }}}]
            )
@@ -121,23 +124,12 @@ export default class Example extends Component {
 | ---   | ---    | ---               | --- |
 | backgroundColor | string           | backgroundColor of the Header                     | **YES** |
 | height          | number           | height of the Header                              | **YES** |
-| text            | string           | centered text of Header                           |  no |
-| iconLeftName    | string or bool   | name of Font Awesome Icon for left side of Header |no |
-| onLeftIconPress | function         | function called on press of left icon             |no |
-| iconRightName   | string or bool   | name of Font Awesome Icon for right side of Header|  no |
-| onRightIconPress| function         | function called on press of right icon            |no |
-| thirdIconName   | string or bool   | name of Font Awesome Icon for third icon of Header|no |
-| onThirdIconPress| function         | function called on press of third icon            |no |
-| textStyle       | object           | styles applied to the Header's text               |  no |
-| iconSize        | number           | size of the icon(s) on the Header                 |no |
-| iconColor       | string           | color of the Header's icon(s)                     |no |
-| scrollY         | Animated Value   | for the Header to scroll away, it needs a reference to the scrollY position of the scrollable content|  no |
-| rightText | string | display text instead of icon, must omit iconRightName prop, uses onRightIconPress function | no|
-| rightTextStyle | object | styles to the right text | no|
-| leftText | string | display text instead of icon, must omit iconLeftName prop, uses onLeftIconPress function | no|
-| leftTextStyle | object | styles to the right text | no|
-| shouldComponentUpdate | function | pass in a function that returns true or false, If you are not dynamically changing the Header content, just pass in `() => false` | no |
-
-
-![Two Icons](./TwoIcons.png "Two Icons")
-![Three Icons](./ThreeIcons.png "Three Icons")
+| centerText | string | Text to display in the center | no|
+| centerTextProps | Text Props | any valid Text props | no |
+| onCenterPress | function | what to do on center press....like scroll to top or show a pop-up | no |
+| onRightPress | function | what to do on right press | no |
+| onLeftPress | function | what to do on right press | no |
+| leftTextProps | Text Props | any valid Text Props | no |
+| leftIconProps | Icon Props | any valid Icon Props | no |
+| rightTextProps | Text Props | any valid Text Props | no |
+| rightIconProps | Icon Props | any valid Icon props | no |
